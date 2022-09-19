@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+
+        <setting name="lazyLoadingEnabled" value="true"/>
+        <setting name="aggressiveLazyLoading" value="false"/>
+    </settings>
+
+    <typeAliases>
+        <package name="cn.yunhe.pojo"/>
+    </typeAliases>
+
+    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageHelper">
+            <property name="dialect" value="mysql"/>
+        </plugin>
+    </plugins>
+
+    <mappers>
+        <mapper resource="mappers/UserPMapper.xml"/>
+        <mapper resource="mappers/DeptPMapper.xml"/>
+        <mapper resource="mappers/ModulePMapper.xml"/>
+        <mapper resource="mappers/RolePMapper.xml"/>
+        <mapper resource="mappers/UserinfoPMapper.xml"/>
+    </mappers>
+</configuration>
